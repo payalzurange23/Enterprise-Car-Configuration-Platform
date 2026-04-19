@@ -1,0 +1,337 @@
+{
+  "models": [
+    {
+      "id": "m1",
+      "name": "ECP Stealth S",
+      "basePrice": 45000,
+      "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "m2",
+      "name": "ECP Grand GT",
+      "basePrice": 62000,
+      "image": "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "m3",
+      "name": "ECP Volt X",
+      "basePrice": 55000,
+      "image": "https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&q=80&w=800"
+    }
+  ],
+  "engines": [
+    {
+      "id": "e1",
+      "name": "2.0L Turbo Petrol",
+      "price": 0,
+      "type": "petrol"
+    },
+    {
+      "id": "e2",
+      "name": "3.0L V6 Petrol",
+      "price": 5000,
+      "type": "petrol"
+    },
+    {
+      "id": "e3",
+      "name": "Dual Motor Electric",
+      "price": 8000,
+      "type": "electric"
+    },
+    {
+      "id": "e4",
+      "name": "2.0L Diesel Eco",
+      "price": 2000,
+      "type": "diesel"
+    }
+  ],
+  "transmissions": [
+    {
+      "id": "t1",
+      "name": "6-Speed Manual",
+      "price": 0
+    },
+    {
+      "id": "t2",
+      "name": "8-Speed Automatic",
+      "price": 2500
+    }
+  ],
+  "trims": [
+    {
+      "id": "tr1",
+      "name": "Standard",
+      "price": 0
+    },
+    {
+      "id": "tr2",
+      "name": "Performance",
+      "price": 12000
+    },
+    {
+      "id": "tr3",
+      "name": "Luxury Silk",
+      "price": 15000
+    }
+  ],
+  "exteriors": [
+    {
+      "id": "ext1",
+      "name": "Alpine White",
+      "price": 0,
+      "hex": "#FFFFFF"
+    },
+    {
+      "id": "ext2",
+      "name": "Midnight Black",
+      "price": 1000,
+      "hex": "#111111"
+    },
+    {
+      "id": "ext3",
+      "name": "Electric Blue",
+      "price": 1500,
+      "hex": "#0000FF"
+    },
+    {
+      "id": "ext4",
+      "name": "Soul Red",
+      "price": 2000,
+      "hex": "#AA0000"
+    }
+  ],
+  "interiors": [
+    {
+      "id": "int1",
+      "name": "Ebony Fabric",
+      "price": 0
+    },
+    {
+      "id": "int2",
+      "name": "Ivory Leather",
+      "price": 3000
+    },
+    {
+      "id": "int3",
+      "name": "Carbon Sport Red",
+      "price": 5000
+    }
+  ],
+  "wheels": [
+    {
+      "id": "w1",
+      "name": "18\" Silver Alloy",
+      "price": 0
+    },
+    {
+      "id": "w2",
+      "name": "20\" Diamond Cut Black",
+      "price": 2500
+    },
+    {
+      "id": "w3",
+      "name": "21\" forged Performance",
+      "price": 4500
+    }
+  ],
+  "packages": [
+    {
+      "id": "p1",
+      "name": "Driver Assist Tech",
+      "price": 2500,
+      "description": "Adaptive cruise control and lane keep assist."
+    },
+    {
+      "id": "p2",
+      "name": "Premium Audio Pack",
+      "price": 1500,
+      "description": "14-speaker surround sound system."
+    },
+    {
+      "id": "p3",
+      "name": "Winter Comfort",
+      "price": 800,
+      "description": "Heated steering wheel and rear seats."
+    }
+  ],
+  "rules": [
+    {
+      "description": "Electric models must have Automatic transmission",
+      "condition": {
+        "engineId": "e3"
+      },
+      "restrictedOptions": {
+        "transmissionId": [
+          "t1"
+        ]
+      }
+    },
+    {
+      "description": "Standard Trim cannot have Carbon Sport Red Interior",
+      "condition": {
+        "trimId": "tr1"
+      },
+      "restrictedOptions": {
+        "interiorId": [
+          "int3"
+        ]
+      }
+    },
+    {
+      "description": "ECP Stealth S is not available with Diesel",
+      "condition": {
+        "modelId": "m1"
+      },
+      "restrictedOptions": {
+        "engineId": [
+          "e4"
+        ]
+      }
+    },
+    {
+      "description": "Volt X only comes with Electric Engine",
+      "condition": {
+        "modelId": "m3"
+      },
+      "restrictedOptions": {
+        "engineId": [
+          "e1",
+          "e2",
+          "e4"
+        ]
+      }
+    }
+  ],
+  "savedConfigurations": [
+    {
+      "id": "conf_1776347665495",
+      "name": "ECP Stealth S Build",
+      "config": {
+        "modelId": "m1",
+        "engineId": "e3",
+        "transmissionId": "t2",
+        "trimId": "tr1",
+        "exteriorId": "ext1",
+        "interiorId": "int1",
+        "wheelsId": "w1",
+        "packageIds": [
+          "p1"
+        ]
+      },
+      "type": "order",
+      "createdAt": "2026-04-16T13:54:25.495Z"
+    },
+    {
+      "id": "conf_1776347709395",
+      "name": "ECP Stealth S Build",
+      "config": {
+        "modelId": "m1",
+        "engineId": "e3",
+        "transmissionId": "t2",
+        "trimId": "tr1",
+        "exteriorId": "ext1",
+        "interiorId": "int1",
+        "wheelsId": "w1",
+        "packageIds": [
+          "p1"
+        ]
+      },
+      "type": "quote",
+      "createdAt": "2026-04-16T13:55:09.395Z"
+    },
+    {
+      "id": "conf_1776349222594",
+      "name": "Custom Build",
+      "config": {
+        "modelId": "m3",
+        "engineId": "e1",
+        "transmissionId": "t2",
+        "trimId": "tr2",
+        "exteriorId": "ext1",
+        "interiorId": "int2",
+        "wheelsId": "w1",
+        "packageIds": [
+          "p2"
+        ]
+      },
+      "type": "order",
+      "createdAt": "2026-04-16T14:20:22.594Z"
+    },
+    {
+      "id": "conf_1776350499205",
+      "name": "ECP Grand GT Build",
+      "config": {
+        "modelId": "m2",
+        "engineId": "e1",
+        "transmissionId": "t1",
+        "trimId": "tr1",
+        "exteriorId": "ext1",
+        "interiorId": "int1",
+        "wheelsId": "w1",
+        "packageIds": [
+          "p1"
+        ]
+      },
+      "totalPrice": 64500,
+      "type": "order",
+      "createdAt": "2026-04-16T14:41:39.205Z"
+    },
+    {
+      "id": "conf_1776500435603",
+      "name": "ECP Grand GT Build",
+      "config": {
+        "modelId": "m2",
+        "engineId": "e2",
+        "transmissionId": "t1",
+        "trimId": "tr3",
+        "exteriorId": "ext4",
+        "interiorId": "int2",
+        "wheelsId": "w2",
+        "packageIds": [
+          "p2"
+        ]
+      },
+      "totalPrice": 88500,
+      "type": "order",
+      "createdAt": "2026-04-18T08:20:35.603Z"
+    },
+    {
+      "id": "conf_1776500784109",
+      "name": "ECP Grand GT Build",
+      "config": {
+        "modelId": "m2",
+        "engineId": "e3",
+        "transmissionId": "t2",
+        "trimId": "tr3",
+        "exteriorId": "ext1",
+        "interiorId": "int3",
+        "wheelsId": "w2",
+        "packageIds": [
+          "p2"
+        ]
+      },
+      "totalPrice": 94000,
+      "type": "order",
+      "createdAt": "2026-04-18T08:26:24.109Z"
+    },
+    {
+      "id": "conf_1776521321602",
+      "name": "ECP Volt X Build",
+      "config": {
+        "modelId": "m3",
+        "engineId": "e3",
+        "transmissionId": "t2",
+        "trimId": "tr1",
+        "exteriorId": "ext1",
+        "interiorId": "int2",
+        "wheelsId": "w2",
+        "packageIds": [
+          "p2"
+        ]
+      },
+      "totalPrice": 70000,
+      "type": "order",
+      "createdAt": "2026-04-18T14:08:41.603Z"
+    }
+  ]
+}

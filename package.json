@@ -1,0 +1,19 @@
+{
+  "name": "ecp-project",
+  "version": "1.0.0",
+  "description": "An industrial-grade car configuration system built for a student-level project. This platform simulates how real-world automotive companies like Tesla or BMW handle complex build rules and pricing.",
+  "main": "index.js",
+  "scripts": {
+    "server": "node server/server.js",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
